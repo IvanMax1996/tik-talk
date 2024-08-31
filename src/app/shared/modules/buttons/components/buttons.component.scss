@@ -1,0 +1,42 @@
+@import "../../../../../styles/mixins";
+
+.button {
+  display: flex;
+  column-gap: 6px;
+
+  &__inner, &__inner-small {
+    position: relative;
+  }
+
+  &__inner {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__item, &__item-small {
+    @include btn(44px);
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+  &__item-small {
+    @include square(44px);
+
+    padding-inline: 0;
+  }
+
+  &__icon-small {
+    @include abs-center;
+  }
+
+  &__icon-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+}
+
+
+

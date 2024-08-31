@@ -1,0 +1,26 @@
+@if (profile(); as profile) {
+  <div class="profile-header">
+    <tt-avatar-circle [avatarUrl]="profile.avatarUrl" [size]="112"></tt-avatar-circle>
+
+    <div class="profile-header__name-wrap">
+      <h4 class="profile-header__name">{{profile.firstName}}
+        {{profile.lastName}}</h4>
+      <h4 class="profile-header__nickname">{{profile.username}}</h4>
+    </div>
+  </div>
+}
+
+@if (isSettingsButton) {
+  <a routerLink="/settings">
+    <button type="button" class="profile-header__button">
+      <div class="profile-header__button-icon-wrap">
+        <span>Редактировать</span>
+        <svg
+          icon="edit-icon" width="16" height="16" class="profile-header__button-icon"
+        ></svg>
+      </div>
+    </button>
+  </a>
+}
+
+

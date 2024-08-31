@@ -1,0 +1,93 @@
+.settings__form {
+  &-avatar-subtitle {
+    margin-bottom: 16px;
+
+    color: var(--color-light-75);
+  }
+
+  &-avatar-wrapper {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    grid-column-gap: 32px;
+  }
+
+  &-avatar-icon {
+    border-radius: 50%;
+  }
+
+  &-avatar-upload {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 16px;
+
+    border: 1px dashed var(--color-light);
+    border-radius: 2px;
+
+    @media (hover: hover) {
+      &:hover {
+        & svg {
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    &.file-over {
+      border: 1px dashed var(--color-primary);
+    }
+  }
+
+  &-avatar-btn-upload {
+    position: relative;
+
+    width: 52px;
+    aspect-ratio: 1;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+
+      }
+    }
+  }
+
+  &-avatar-icon {
+    color: var(--color-light);
+  }
+
+
+  &-avatar-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: none;
+  }
+
+  &-avatar-text, &__form-avatar-label {
+    position: relative;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+
+  &-avatar-label {
+    color: var(--color-primary);
+
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,7 @@
+:host {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100dvh;
+
+  background: url("../../../../../public/assets/images/background-big.jpg") no-repeat 0 0 / cover;
+}

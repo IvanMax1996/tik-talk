@@ -1,0 +1,82 @@
+<div class="login">
+  <h2 class="login__header">
+    Вход
+  </h2>
+
+  <form
+    class="login__form login-form" [formGroup]="form" (ngSubmit)="onSubmit()"
+  >
+    <div class="login-form__user-info-wrap">
+      <div class="login-form__input-wrap">
+        <label
+          for="login-form-user" class="login-form__user-info"
+        >
+          Telegram username
+        </label>
+
+        <div class="login-form__input-inner">
+          <input
+            formControlName="username" type="text" placeholder="Введите логин"
+            id="login-form-user" class="login-form__input"
+          />
+
+          <svg
+            icon="telegram-icon" width="20" height="20"
+            class="login-form__icon"
+          ></svg>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="login-form__password-info-wrap">
+      <div class="login-form__input-wrap">
+        <label
+          for="login-form-password" class="login-form__password-info"
+        >
+          Пароль
+        </label>
+
+        <div class="login-form__input-inner">
+          <input
+            formControlName="password" [type]="isPasswordVisible() ?
+            'text' : 'password'"
+            placeholder="Введите пароль" id="login-form-password"
+            class="login-form__input"
+            [ngClass]="{'login-form__input--letter-spacing':
+            !isPasswordVisible()}"
+          />
+
+          <div
+            (click)="isPasswordVisible.set(!isPasswordVisible())"
+            class="login-form__icon-wrapper"
+          >
+            @if (!isPasswordVisible()) {
+              <svg
+                icon="eye-hidden-icon" width="20" height="20"
+                class="login-form__icon"
+              ></svg>
+            } @else {
+              <svg
+                icon="eye-icon" width="20" height="20"
+                class="login-form__icon"
+              ></svg>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <tt-buttons
+      [titleButton]="'Войти'" [isOffsetButtonIcon]="true"
+    ></tt-buttons>
+  </form>
+</div>
+
+<a routerLink="">
+  <img
+    src="/assets/images/logo-star.svg" alt="logo" width="356"
+    height="431" loading="lazy" class="login__image-logo"
+  />
+</a>
+

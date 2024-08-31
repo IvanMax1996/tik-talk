@@ -1,0 +1,21 @@
+.subscribers {
+  &__item-avatar {
+    border-radius: 50%;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 12px;
+
+    padding-block: 8px;
+
+    cursor: pointer;
+
+    &-name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+}

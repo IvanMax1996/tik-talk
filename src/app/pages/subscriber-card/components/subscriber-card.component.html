@@ -1,0 +1,17 @@
+<a [routerLink]="['/profile', profile.id]">
+  <div class="subscribers__item">
+    <img
+      [src]="profile.avatarUrl | imageUrl" alt="avatar-icon" loading="lazy"
+      [width]="sizeIcon"
+      [height]="sizeIcon" class="subscribers__item-avatar"
+    />
+
+    @if (isNameSubscribe) {
+      <span
+        class="subscribers__item-name"
+      >{{ profile.firstName }} {{ profile.lastName }}</span>
+    }
+  </div>
+</a>
+
+

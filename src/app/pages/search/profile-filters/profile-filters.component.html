@@ -1,0 +1,72 @@
+<div class="profile-filter">
+  <form [formGroup]="formFilter" class="profile-filter__form form-filter">
+    <div class="form-filter__first-name-wrap">
+      <span class="form-filter__first-name-text">Имя пользователя</span>
+
+      <div class="form-filter__first-name-input-wrap">
+        <input
+          formControlName="firstName"
+          type="text" placeholder="Выберите"
+          class="form-filter__input"
+        />
+        <svg
+          icon="search-icon" width="18" height="18"
+          class="form-filter__first-name-icon"
+        ></svg>
+      </div>
+    </div>
+
+    <div class="form-filter__last-name-wrap">
+      <span class="form-filter__last-name-text">Фамилия</span>
+
+      <div class="form-filter__last-name-input-wrap">
+        <input
+          formControlName="lastName"
+          type="text" placeholder="Выберите"
+          class="form-filter__input"
+        />
+        <svg
+          icon="search-icon" width="18" height="18"
+          class="form-filter__last-name-icon"
+        ></svg>
+      </div>
+    </div>
+
+    <div class="form-filter__city-wrap">
+      <span class="form-filter__city-text">Город</span>
+
+      <div class="form-filter__city-input-wrap">
+        <input
+          type="text" placeholder="Выберите"
+          class="form-filter__input"
+        />
+        <svg
+          icon="search-icon" width="18" height="18"
+          class="form-filter__city-icon"
+        ></svg>
+      </div>
+    </div>
+
+    <div class="form-filter__stack-wrap">
+      <span class="form-filter__stack-text">Навыки</span>
+
+      <div class="form-filter__stack-input-wrap">
+        <input formControlName="stack"
+          type="text" placeholder="Выберите"
+          class="form-filter__input"
+        />
+        <svg
+          icon="search-icon" width="18" height="18"
+          class="form-filter__stack-icon"
+        ></svg>
+      </div>
+    </div>
+
+    <button type="submit" class="form-filter__button-submit">
+      <img
+        src="/assets/images/icons/filter-button-icon.svg" alt="logo" width="46"
+        height="46" loading="lazy" class="form-filter__button-submit-icon"
+      />
+    </button>
+  </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="profile__subscribers">
+  <div class="profile__subscribers-count">
+    <h4 class="profile__subscribers-text">Подписчики</h4>
+
+    <span class="profile__subscribers-total">{{ totalSubscribe$ | async }}</span>
+  </div>
+  <div class="profile__subscribers-all-subscribe">
+    @for (profile of subscribers$ | async; track profile.id) {
+      <tt-subscriber-card
+        [profile]="profile"
+        [isNameSubscribe]="false"
+        [sizeIcon]="36"
+      ></tt-subscriber-card>
+    }
+
+    <a routerLink="/search">
+      <button type="button" class="profile__subscribers-button">
+        <svg icon="plus-icon" width="16px" height="16px"></svg>
+      </button>
+    </a>
+  </div>
+</div>
+
+<div class="profile__skills">
+  <h4 class="profile__skills-subtitle">Навыки</h4>
+
+  <div class="profile__skills-tags">
+    @for (skill of profile.stack; track $index) {
+      <tt-tags [tag]="skill"></tt-tags>
+    }
+  </div>
+</div>
+
+<div class="profile__about-info">
+  <h4 class="profile__about-info-subtitle">О себе</h4>
+
+  <p class="profile__about-text">
+    {{profile.description}}
+  </p>
+</div>
+

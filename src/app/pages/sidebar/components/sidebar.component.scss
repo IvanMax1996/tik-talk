@@ -1,0 +1,173 @@
+@import "../../../../styles/mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 60px;
+  padding: 20px 12px;
+
+  background-color: var(--color-dark);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  &__logo {
+    display: flex;
+    align-self: start;
+    padding: 0 16px;
+
+    cursor: pointer;
+  }
+
+  &__all-subscribes {
+    padding-left: 16px;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__all-subscribes-wrap {
+    display: flex;
+    column-gap: 12px;
+
+    padding-left: 16px;
+
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    background-color: var(--color-grey-secondary);
+    padding: 4px 16px;
+
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    &-icon {
+      border-radius: 50%;
+    }
+  }
+
+  &__footer-user-info-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  &__footer-nickname {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+}
+
+.menu {
+  margin-bottom: 20px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary);
+        background-color: var(--color-grey-secondary);
+      }
+    }
+
+    &.active {
+      background-color: var(--color-grey-secondary);
+    }
+  }
+
+  &__item-li {
+    display: flex;
+  }
+
+  &__item-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+
+      color: var(--color-primary);
+    }
+  }
+
+  &__item-text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__item-message-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item-count-message {
+    @include total-count-subscribers(var(--color-primary));
+  }
+
+  &__icon {
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary)
+      }
+    }
+  }
+}
+
+.subscribers {
+  padding: 0 16px;
+  margin-bottom: 20px;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+
+    color: var(--color-light-75);
+
+    margin-bottom: 20px;
+  }
+}

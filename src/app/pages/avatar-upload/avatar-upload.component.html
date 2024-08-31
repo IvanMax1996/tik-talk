@@ -1,0 +1,45 @@
+<div class="settings__form-avatar">
+  <h5 class="settings__form-avatar-subtitle">Аватарка</h5>
+
+  <div class="settings__form-avatar-wrapper">
+    @if (meAccount$ | async; as meAccount) {
+      @if (meAccount.avatarUrl && !isAvatar) {
+        <img
+          [src]="meAccount.avatarUrl | imageUrl" alt="avatar-icon" loading="lazy"
+          width="140" height="140" class="settings__form-avatar-icon" />
+        } @else {
+        <img
+          [src]="preview()" alt="avatar-icon" loading="lazy"
+          width="140" height="140" class="settings__form-avatar-icon" />
+      }
+    }
+
+    <div dnd (keyup.enter)="inputRef.click()" (fileDropped)="onFileDropped($event)"
+      class="settings__form-avatar-upload"
+      tabindex="0">
+      <input
+        #inputRef
+        type="file" name="" class="settings__form-avatar-input" id="input-avatar"
+        tabindex="-1"
+        (change)="fileBrowserHandler($event)"
+      />
+      <button
+        (click)="inputRef.click()" type="button"
+        class="settings__form-avatar-btn-upload"
+      >
+        <svg
+          icon="upload-icon" width="52px" height="52px"
+          class="settings__form-avatar-icon"
+        ></svg>
+      </button>
+      <span class="settings__form-avatar-text ">Перетащите изображение или
+        <label
+          for="input-avatar"
+          class="settings__form-avatar-label"
+        >Загрузите</label>
+        <br />
+        (разрешение до 5,000 x 5,000 px)
+      </span>
+    </div>
+  </div>
+</div>

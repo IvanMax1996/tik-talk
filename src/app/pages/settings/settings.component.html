@@ -1,0 +1,83 @@
+<div class="settings">
+  @if (meAccount$ | async; as meAccount) {
+    <div class="settings__header">
+      <tt-profile-header
+        [profile]="meAccount"
+        [isSettingsButton]="false"
+      ></tt-profile-header>
+
+      <hr class="settings__line" />
+    </div>
+  }
+
+  <form (ngSubmit)="onSave()" [formGroup]="form" class="settings__form">
+    <div class="settings__form-inner">
+      <div class="settings__form-wrap-name">
+        <div class="settings__form-input-name">
+          <label for="input-name" class="settings__form-label">Имя</label>
+          <input
+            formControlName="firstName" type="text" placeholder="Введите данные"
+            id="input-name" class="settings__form-input"
+          />
+        </div>
+
+        <div class="settings__form-input-lastname">
+          <label for="input-lastname" class="settings__form-label">Фамилия</label>
+          <input formControlName="lastName"
+            type="text" placeholder="Введите данные" id="input-lastname"
+            class="settings__form-input"
+          />
+        </div>
+      </div>
+
+      <div class="settings__form-input-username">
+        <label for="input-username" class="settings__form-label">Telegram username</label>
+        <input formControlName="username"
+          type="text" placeholder="Введите данные" id="input-username"
+          class="settings__form-input"
+        />
+      </div>
+
+      <div class="settings__form-input-about">
+        <label for="input-description" class="settings__form-label">О себе</label>
+        <textarea formControlName="description"
+          type="text" placeholder="Введите данные" id="input-description"
+          class="settings__form-textarea"
+        ></textarea>
+      </div>
+
+      <tt-avatar-upload></tt-avatar-upload>
+
+      <div class="settings__form-input-stack">
+        <label for="input-stack" class="settings__form-label">Навыки</label>
+        <div class="settings__form-input-stack-wrap">
+          <input formControlName="stack"
+            type="text" placeholder="Введите данные" id="input-stack"
+            class="settings__form-input"
+          />
+          <svg icon="search-icon" width="18" height="18"
+            class="settings__form-input-stack-icon"></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings__form-footer form-footer">
+      <div class="form-footer__left-wrap-btn">
+        <button type="button" class="form-footer__btn-delete">
+          <svg icon="delete-icon" width="16" height="16"></svg>
+        </button>
+        <button type="button" class="form-footer__btn-logout">
+          <svg icon="logout-icon" width="16" height="16"></svg>
+        </button>
+      </div>
+      <div class="form-footer__right-wrap-btn">
+        <a routerLink="/profile/me">
+          <button type="button"
+            class="form-footer__btn-cancel">Отмена
+          </button>
+        </a>
+        <button type="submit" class="form-footer__btn-save">Сохранить</button>
+      </div>
+    </div>
+  </form>
+</div>

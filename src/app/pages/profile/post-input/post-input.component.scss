@@ -1,0 +1,30 @@
+@import "../../../../styles/mixins";
+
+.input-message {
+  &-wrap {
+
+  }
+
+  &-input-inner {
+    position: relative;
+  }
+
+  &__input {
+    @include input(20px);
+
+    padding: 0;
+
+    border: none;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
+
+    cursor: pointer;
+  }
+}
+
+

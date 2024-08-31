@@ -1,0 +1,19 @@
+:root {
+  --color-dark: #000000;
+  --color-light: #FFFFFF;
+  --color-light-75: #FFFFFFBF;
+  --color-primary: #AE7AFF;
+  --color-grey-25: #FFFFFF40;
+  --color-grey-secondary: #161616;
+  --color-green: #98E9AB;
+
+  --border-dark: 1px solid var(--color-dark);
+  --border-light: 1px solid var(--color-light);
+  --border-radius-small: 2px;
+
+  --font-family-base: "JetBrains Mono", "Courier New", monospace;
+
+  --button-height: 44px;
+
+  --transition-duration: 0.2s;
+}

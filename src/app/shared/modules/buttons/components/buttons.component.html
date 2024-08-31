@@ -1,0 +1,38 @@
+<div class="button">
+  @if (countButton === 1) {
+    <div class="button__inner">
+      <button type="submit" class="button__item">
+        <div class="button__icon-wrap">
+          <span>{{ titleButton }}</span>
+          <svg
+            icon="arrow-up-right-icon" width="16" height="16" class="button__icon"
+          ></svg>
+        </div>
+      </button>
+    </div>
+  } @else {
+    <div class="button__inner">
+      <button
+        type="submit" class="button__item"
+      >
+        <div class="button__icon-wrap">
+          <span>{{ titleButton }}</span>
+          <svg
+            icon="arrow-up-right-icon" width="16" height="16" class="button__icon"
+          ></svg>
+        </div>
+      </button>
+    </div>
+
+    <div class="button__inner-small">
+      <button type="submit" class="button__item-small">
+        <div class="button__icon-wrap">
+          <span>{{ titleButton }}</span>
+          <svg
+            icon="arrow-up-right-icon" width="16" height="16" class="button__icon"
+          ></svg>
+        </div>
+      </button>
+    </div>
+  }
+</div>

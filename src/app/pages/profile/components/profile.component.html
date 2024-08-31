@@ -1,0 +1,16 @@
+<div class="profile">
+  @if (profile$ | async; as profile) {
+    <tt-profile-header [profile]="profile"></tt-profile-header>
+
+    <main class="profile__content-wrap">
+      <div class="profile__content-left">
+        <tt-post-feed></tt-post-feed>
+      </div>
+
+      <div class="profile__content-right">
+        <tt-profile-right-content [profile]="profile"></tt-profile-right-content>
+      </div>
+    </main>
+  }
+</div>
+

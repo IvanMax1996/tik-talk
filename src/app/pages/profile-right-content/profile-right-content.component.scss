@@ -1,0 +1,83 @@
+@import "../../../styles/mixins";
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  padding-inline: 24px;
+}
+
+.profile__subscribers {
+  &-count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &-text {
+    @include subtitle;
+  }
+
+  &-total {
+    @include total-count-subscribers(var(--color-green));
+  }
+
+  &-all-subscribe {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+  }
+
+  &-button {
+    @include flex-center;
+    padding: 8px;
+
+    border: none;
+    color: var(--color-light);
+    background-color: transparent;
+
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary)
+      }
+    }
+  }
+}
+
+.profile__skills {
+  @include flex;
+
+  &-subtitle {
+    @include subtitle;
+  }
+
+  &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 4px;
+  }
+}
+
+.profile__about-info {
+  @include flex;
+
+  &-subtitle {
+    @include subtitle;
+  }
+
+  &-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+}

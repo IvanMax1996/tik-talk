@@ -1,0 +1,76 @@
+<div class="sidebar">
+  <a routerLink="/" class="sidebar__logo">
+    <img
+      src="/assets/images/logo-star-mini.svg" alt="logo-mini" width="61"
+      height="74" loading="lazy" class="sidebar__logo-img"
+    >
+  </a>
+
+  <nav class="sidebar__menu menu">
+    <ul class="menu__list">
+      @for (menuItem of menuItems; track $index) {
+        <li class="menu__item-li">
+          <a [routerLink]="menuItem.link" routerLinkActive="active" class="menu__item">
+            <div class="menu__item-message-wrap">
+              <div class="menu__item-wrap">
+                <svg [icon]="menuItem.icon" width="16" height="16"></svg>
+
+                <span class="menu__item-text">{{ menuItem.label }}</span>
+              </div>
+              @if (menuItem.countMessage) {
+                <div class="menu__item-count-message">{{ menuItem.countMessage }}</div>
+              }
+            </div>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="sidebar__subscribers subscribers">
+    <p class="subscribers__text">Подписчики</p>
+
+    <div class="subscribers__wrap">
+      @for (profile of subscribers$ | async; track profile.id) {
+        <tt-subscriber-card
+          [profile]="profile"
+          [isNameSubscribe]="true"
+        ></tt-subscriber-card>
+      }
+    </div>
+  </div>
+
+  <div class="sidebar__all-subscribes-wrap">
+    <a routerLink="/login" class="sidebar__all-subscribes-link">Все подписчики</a>
+
+    <svg
+      icon="arrow-right-icon" width="16" height="16" class="sidebar__all-subscribes-icon"
+    ></svg>
+  </div>
+</div>
+
+<footer class="sidebar__footer">
+
+  <div class="sidebar__footer-user-info-wrap">
+    @if (meAccount(); as me) {
+      @if (me.avatarUrl) {
+        <img
+          [src]="me.avatarUrl | imageUrl" alt="avatar-icon" loading="lazy" width="32"
+          height="32"
+          class="sidebar__footer-icon"
+        />
+      } @else {
+        <img
+          src="/assets/images/icons/avatar-icon.svg" alt="avatar-icon" loading="lazy"
+          width="32" height="32" class="sidebar__footer-icon"
+        />
+      }
+
+      <span class="sidebar__footer-nickname">{{ meAccount()?.username }}</span>
+    }
+
+
+  </div>
+
+  <svg icon="settings-icon" width="14" height="14"></svg>
+</footer>

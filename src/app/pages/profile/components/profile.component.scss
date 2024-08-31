@@ -1,0 +1,9 @@
+.profile {
+  padding: 24px;
+
+  &__content-wrap {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    grid-gap: 64px;
+  }
+}
