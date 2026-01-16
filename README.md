@@ -1,27 +1,62 @@
-# TikTok
+# Angular Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Современное веб-приложение, разработанное на Angular.
 
-## Development server
+## 🚀 Быстрый старт
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Предварительные требования
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (версия 14.x или выше)
+- [npm](https://www.npmjs.com/) или [yarn](https://yarnpkg.com/)
+- [Angular CLI](https://angular.io/cli)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Установка
 
-## Build
+1. **Клонируйте репозиторий:**
+```bash
+   git clone <url-репозитория>
+   cd <название-проекта>
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Установите зависимости:**
+```bash
+   npm install
+   # или
+   yarn install
+```
 
-## Running unit tests
+3. **Получите доступ к проекту:**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   Для полного доступа к функционалу проекта необходимо пройти авторизацию:
 
-## Running end-to-end tests
+  - Откройте Telegram бот: [@icherniakov_info_bot](https://t.me/icherniakov_info_bot)
+  - Отправьте команду: `/ytcourse`
+  - Получите логин и пароль для входа
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. **Запустите проект:**
+```bash
+   ng serve
+   # или
+   npm start
+```
 
-## Further help
+5. **Откройте в браузере:**
+```
+   http://localhost:4200
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📦 Сборка проекта
+
+Для создания production-сборки выполните:
+```bash
+ng build --configuration production
+```
+
+Собранные файлы будут находиться в директории `dist/`.
+
+## 🛠️ Технологии
+
+- **Angular** - фреймворк для разработки
+- **TypeScript** - язык программирования
+- **RxJS** - реактивное программирование
+- **Angular CLI** - инструмент разработки
